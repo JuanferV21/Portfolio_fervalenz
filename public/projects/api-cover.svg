@@ -1,0 +1,13 @@
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="800" height="600" fill="#F1F5F9"/>
+<rect x="100" y="80" width="600" height="440" fill="#0F172A" rx="8"/>
+<rect x="120" y="100" width="560" height="40" fill="#334155" rx="4"/>
+<text x="140" y="125" fill="#22C55E" font-family="JetBrains Mono" font-size="12">GET /api/tasks</text>
+<rect x="120" y="160" width="560" height="40" fill="#334155" rx="4"/>
+<text x="140" y="185" fill="#3B82F6" font-family="JetBrains Mono" font-size="12">POST /api/tasks</text>
+<rect x="120" y="220" width="560" height="40" fill="#334155" rx="4"/>
+<text x="140" y="245" fill="#F97316" font-family="JetBrains Mono" font-size="12">PUT /api/tasks/:id</text>
+<rect x="120" y="280" width="560" height="40" fill="#334155" rx="4"/>
+<text x="140" y="305" fill="#EF4444" font-family="JetBrains Mono" font-size="12">DELETE /api/tasks/:id</text>
+<text x="400" y="380" text-anchor="middle" fill="#475569" font-family="Inter" font-size="16" font-weight="600">RESTful API</text>
+</svg>

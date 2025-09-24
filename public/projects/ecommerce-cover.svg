@@ -1,0 +1,13 @@
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="800" height="600" fill="#F1F5F9"/>
+<rect x="100" y="80" width="600" height="440" fill="#E2E8F0" rx="8"/>
+<rect x="120" y="100" width="560" height="60" fill="#3B82F6" rx="4"/>
+<rect x="140" y="180" width="120" height="80" fill="#CBD5E1" rx="4"/>
+<rect x="280" y="180" width="120" height="80" fill="#CBD5E1" rx="4"/>
+<rect x="420" y="180" width="120" height="80" fill="#CBD5E1" rx="4"/>
+<rect x="560" y="180" width="120" height="80" fill="#CBD5E1" rx="4"/>
+<text x="400" y="340" text-anchor="middle" fill="#475569" font-family="Inter" font-size="16" font-weight="600">E-commerce Platform</text>
+<circle cx="160" cy="380" r="8" fill="#22C55E"/>
+<circle cx="200" cy="380" r="8" fill="#3B82F6"/>
+<circle cx="240" cy="380" r="8" fill="#8B5CF6"/>
+</svg>

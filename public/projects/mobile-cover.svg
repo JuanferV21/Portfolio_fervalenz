@@ -1,0 +1,13 @@
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="800" height="600" fill="#F1F5F9"/>
+<rect x="300" y="50" width="200" height="400" fill="#000000" rx="20"/>
+<rect x="310" y="70" width="180" height="360" fill="#FFFFFF" rx="8"/>
+<circle cx="400" cy="90" r="8" fill="#3B82F6"/>
+<text x="400" y="102" text-anchor="middle" fill="#111827" font-family="Inter" font-size="12" font-weight="600">Expenses</text>
+<rect x="320" y="120" width="160" height="30" fill="#EF4444" rx="15"/>
+<rect x="320" y="160" width="160" height="30" fill="#10B981" rx="15"/>
+<rect x="320" y="200" width="160" height="30" fill="#3B82F6" rx="15"/>
+<circle cx="400" cy="280" r="50" stroke="#E5E7EB" stroke-width="8" fill="none"/>
+<circle cx="400" cy="280" r="50" stroke="#3B82F6" stroke-width="8" fill="none" stroke-dasharray="157 314" transform="rotate(-90 400 280)"/>
+<text x="400" y="380" text-anchor="middle" fill="#475569" font-family="Inter" font-size="16" font-weight="600">Mobile App</text>
+</svg>

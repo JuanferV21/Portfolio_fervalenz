@@ -1,26 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@200;300;400;500;600;700;800&display=swap');
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --font-inter: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Yeezy-inspired monochrome palette */
+  --color-white: #ffffff;
+  --color-black: #000000;
+
+  /* Grayscale system */
+  --color-gray-50: #fafafa;
+  --color-gray-100: #f5f5f5;
+  --color-gray-200: #e5e5e5;
+  --color-gray-300: #d4d4d4;
+  --color-gray-400: #a3a3a3;
+  --color-gray-500: #737373;
+  --color-gray-600: #525252;
+  --color-gray-700: #404040;
+  --color-gray-800: #262626;
+  --color-gray-900: #171717;
+
+  /* Neutral colors mapped to grayscale */
+  --color-neutral-25: #ffffff;
+  --color-neutral-50: #fafafa;
+  --color-neutral-100: #f5f5f5;
+  --color-neutral-200: #e5e5e5;
+  --color-neutral-300: #d4d4d4;
+  --color-neutral-400: #a3a3a3;
+  --color-neutral-500: #737373;
+  --color-neutral-600: #525252;
+  --color-neutral-700: #404040;
+  --color-neutral-800: #262626;
+  --color-neutral-900: #171717;
+
+  /* Slate colors mapped to grayscale */
+  --color-slate-50: #fafafa;
+  --color-slate-100: #f5f5f5;
+  --color-slate-200: #e5e5e5;
+  --color-slate-300: #d4d4d4;
+  --color-slate-400: #a3a3a3;
+  --color-slate-500: #737373;
+  --color-slate-600: #525252;
+  --color-slate-700: #404040;
+  --color-slate-800: #262626;
+  --color-slate-900: #171717;
+  --color-slate-950: #0a0a0a;
+
+  /* Minimal accent for buttons only */
+  --color-accent: #171717;
+  --color-accent-hover: #262626;
+
+  /* Primary colors (minimal, only for essential buttons) */
+  --color-primary-400: #404040;
+  --color-primary-500: #262626;
+  --color-primary-600: #171717;
+
+  /* Custom spacing */
+  --spacing-18: 4.5rem;
+  --spacing-88: 22rem;
+  --spacing-128: 32rem;
+  --spacing-144: 36rem;
+
+  /* Custom max-width */
+  --max-width-8xl: 88rem;
+  --max-width-9xl: 96rem;
+
+  /* Custom aspect ratios */
+  --aspect-ratio-4-3: 4 / 3;
+  --aspect-ratio-3-2: 3 / 2;
+  --aspect-ratio-3-4: 3 / 4;
+  --aspect-ratio-5-4: 5 / 4;
+
+  /* Custom font sizes */
+  --font-size-hero: 3.5rem;
+  --line-height-hero: 1.1;
+  --letter-spacing-hero: -0.025em;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@layer base {
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  body {
+    @apply bg-white text-black antialiased;
+    font-family: var(--font-inter);
+    font-weight: 300;
+    font-feature-settings: normal;
+  }
+
+  ::selection {
+    @apply bg-black text-white;
+  }
+
+  ::-webkit-scrollbar {
+    @apply w-1;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-gray-100;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gray-400 rounded-none;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-600;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-light tracking-wide uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  h1 {
+    @apply font-extralight text-6xl md:text-7xl lg:text-8xl;
+  }
+
+  h2 {
+    @apply font-light text-3xl md:text-4xl lg:text-5xl;
+  }
+
+  h3 {
+    @apply font-light text-xl md:text-2xl;
+  }
+
+  p {
+    @apply leading-relaxed font-light;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .hero-text {
+    @apply text-6xl md:text-7xl lg:text-8xl font-medium tracking-tight leading-none;
+  }
+
+  .section-padding {
+    @apply px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16;
+  }
+
+  .container-max {
+    @apply max-w-9xl mx-auto;
+  }
+
+  .grid-cols-masonry {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-6 py-3
+           bg-black text-white font-medium rounded-none
+           transition-all duration-200 ease-out
+           hover:bg-gray-800 hover:scale-[1.02]
+           active:scale-[0.98]
+           focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2
+           disabled:opacity-50 disabled:pointer-events-none;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-6 py-3
+           border border-black text-black font-medium rounded-none
+           transition-all duration-200 ease-out
+           hover:bg-black hover:text-white hover:scale-[1.02]
+           active:scale-[0.98]
+           focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2
+           disabled:opacity-50 disabled:pointer-events-none;
+  }
+
+  .btn-tech {
+    @apply inline-flex items-center justify-center px-4 py-2
+           bg-gray-100 text-black text-sm font-medium rounded-none
+           transition-all duration-200 ease-out
+           hover:bg-gray-200 hover:scale-[1.05]
+           active:scale-[0.95];
+  }
+
+  .link-underline {
+    @apply relative transition-all duration-200 ease-out;
+  }
+
+  .link-underline::after {
+    @apply absolute bottom-0 left-0 w-0 h-px bg-current transition-all duration-200 ease-out;
+    content: '';
+  }
+
+  .link-underline:hover::after {
+    @apply w-full;
+  }
+
+  .card-hover {
+    @apply transition-all duration-200 ease-out hover:scale-[1.02] hover:shadow-lg;
+  }
+}
+
+@layer utilities {
+  .text-pretty {
+    text-wrap: pretty;
+  }
+
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+
+  .transform-preserve-3d {
+    transform-style: preserve-3d;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .card-hover {
+    @apply hover:scale-100;
+  }
 }
