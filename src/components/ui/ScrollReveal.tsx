@@ -10,7 +10,6 @@ interface ScrollRevealProps {
   delay?: number;
   className?: string;
   threshold?: number;
-  margin?: string;
   as?: string;
 }
 
@@ -20,12 +19,10 @@ export default function ScrollReveal({
   delay = 0,
   className = '',
   threshold = 0.1,
-  margin = '0px 0px -100px 0px',
   as = 'div'
 }: ScrollRevealProps) {
   const { ref, isInView } = useScrollAnimation({
     threshold,
-    margin,
     triggerOnce: true
   });
 

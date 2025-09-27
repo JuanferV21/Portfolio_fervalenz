@@ -6,21 +6,18 @@ import { useRef } from 'react';
 interface ScrollAnimationConfig {
   threshold?: number;
   triggerOnce?: boolean;
-  margin?: string;
 }
 
 export const useScrollAnimation = (config: ScrollAnimationConfig = {}) => {
   const {
     threshold = 0.1,
-    triggerOnce = true,
-    margin = '0px 0px -100px 0px'
+    triggerOnce = true
   } = config;
 
   const ref = useRef(null);
   const isInView = useInView(ref, {
-    threshold,
-    once: triggerOnce,
-    margin: margin as any
+    amount: threshold,
+    once: triggerOnce
   });
 
   return { ref, isInView };

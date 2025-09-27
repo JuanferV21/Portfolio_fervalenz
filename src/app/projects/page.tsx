@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useMemo, useCallback } from 'react';
+import { useState, useMemo } from 'react';
 import Layout from '@/components/layout/Layout';
 import ProjectsList from '@/components/ui/ProjectsList';
 import { developerProjects } from '@/data/developer-data';

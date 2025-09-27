@@ -1,6 +1,5 @@
 import Layout from '@/components/layout/Layout';
 import ContactForm from '@/components/ui/ContactForm';
-import Icon from '@/components/ui/Icon';
 import { developerProfile } from '@/data/developer-data';
 
 export default function ContactPage() {
