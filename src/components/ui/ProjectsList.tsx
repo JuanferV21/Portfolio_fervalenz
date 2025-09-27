@@ -44,20 +44,20 @@ export default function ProjectsList({ projects, className = '' }: ProjectsListP
           transition={{ duration: 0.2, delay: index * 0.05 }}
           className="group"
         >
-          <div className="py-8 border-b border-gray-200 hover:border-gray-400 transition-colors duration-100">
+          <div className="p-6 border-2 border-black mb-6 hover:bg-gray-50 transition-colors duration-200">
             {/* Project Header with Image */}
             <div className="flex items-start gap-6 mb-6">
               {/* Project Image - Clickable */}
               <div className="flex-shrink-0">
                 <button
                   onClick={() => openViewer(index)}
-                  className="w-20 h-20 bg-gray-100 border border-black overflow-hidden hover:border-gray-600 transition-colors duration-100 cursor-pointer"
+                  className="w-24 h-24 bg-gray-100 border-2 border-black overflow-hidden hover:shadow-lg transition-all duration-200 cursor-pointer"
                 >
                   <Image
                     src={project.coverImage.src}
                     alt={project.coverImage.alt}
-                    width={80}
-                    height={80}
+                    width={96}
+                    height={96}
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-200"
                     placeholder={project.coverImage.blurDataURL ? 'blur' : 'empty'}
                     blurDataURL={project.coverImage.blurDataURL}
@@ -77,10 +77,10 @@ export default function ProjectsList({ projects, className = '' }: ProjectsListP
                     </h3>
                   </div>
 
-                  <div className="flex items-center space-x-4 text-xs font-mono text-gray-500">
-                    <span>{project.year}</span>
-                    <span>/</span>
-                    <span className="bg-gray-100 px-2 py-1 text-black">
+                  <div className="flex items-center space-x-4 text-xs font-mono">
+                    <span className="text-gray-600">{project.year}</span>
+                    <span className="text-gray-400">/</span>
+                    <span className="bg-black text-white px-3 py-1 uppercase tracking-wide">
                       {getStatusDisplay(project.status)}
                     </span>
                   </div>
@@ -97,17 +97,17 @@ export default function ProjectsList({ projects, className = '' }: ProjectsListP
             <div className="space-y-4">
               {/* Technologies */}
               <div>
-                <div className="flex items-center space-x-4 mb-2">
-                  <span className="text-xs font-light text-black uppercase tracking-[0.15em]">
-                    Stack
+                <div className="flex items-center space-x-4 mb-3">
+                  <span className="text-xs font-mono text-black uppercase tracking-wider">
+                    STACK
                   </span>
-                  <div className="flex-1 h-px bg-gray-200" />
+                  <div className="flex-1 h-px bg-black" />
                 </div>
-                <div className="flex flex-wrap gap-x-6 gap-y-1">
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2">
                   {project.technologies.map((tech, techIndex) => (
                     <span
                       key={techIndex}
-                      className="text-sm font-mono text-black uppercase tracking-wide"
+                      className="text-xs font-mono text-black uppercase tracking-wide bg-gray-100 px-2 py-1 text-center border border-black"
                     >
                       {tech}
                     </span>
@@ -115,23 +115,23 @@ export default function ProjectsList({ projects, className = '' }: ProjectsListP
                 </div>
               </div>
 
-              {/* Actions - Improved Buttons */}
+              {/* Actions */}
               <div>
                 <div className="flex items-center space-x-4 mb-3">
-                  <span className="text-xs font-light text-black uppercase tracking-[0.15em]">
-                    Actions
+                  <span className="text-xs font-mono text-black uppercase tracking-wider">
+                    ACTIONS
                   </span>
-                  <div className="flex-1 h-px bg-gray-200" />
+                  <div className="flex-1 h-px bg-black" />
                 </div>
-                <div className="flex space-x-4">
+                <div className="flex flex-col sm:flex-row gap-3">
                   {project.liveUrl && (
                     <a
                       href={project.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="bg-black text-white px-4 py-2 text-sm font-mono uppercase tracking-wide hover:bg-gray-800 transition-colors duration-100"
+                      className="bg-black text-white px-6 py-3 text-sm font-mono uppercase tracking-wide hover:bg-gray-800 transition-colors duration-200 text-center border-2 border-black"
                     >
-                      [VIEW LIVE]
+                      View Live Site
                     </a>
                   )}
                   {project.githubUrl && (
@@ -139,9 +139,9 @@ export default function ProjectsList({ projects, className = '' }: ProjectsListP
                       href={project.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="bg-white text-black border border-black px-4 py-2 text-sm font-mono uppercase tracking-wide hover:bg-gray-100 transition-colors duration-100"
+                      className="bg-white text-black border-2 border-black px-6 py-3 text-sm font-mono uppercase tracking-wide hover:bg-gray-100 transition-colors duration-200 text-center"
                     >
-                      [GITHUB]
+                      View Source Code
                     </a>
                   )}
                 </div>

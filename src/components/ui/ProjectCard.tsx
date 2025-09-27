@@ -41,7 +41,7 @@ export default function ProjectCard({
       }}
     >
       <Link href={project.href} className="block">
-        <div className="relative aspect-4/3 mb-6 overflow-hidden bg-neutral-100">
+        <div className="relative aspect-4/3 mb-6 overflow-hidden bg-gray-100">
           <Image
             src={project.coverImage.src}
             alt={project.coverImage.alt}
@@ -53,24 +53,24 @@ export default function ProjectCard({
           />
 
           {/* Hover overlay */}
-          <div className="absolute inset-0 bg-neutral-900/0 group-hover:bg-neutral-900/10 transition-colors duration-300" />
+          <div className="absolute inset-0 bg-gray-900/0 group-hover:bg-gray-900/10 transition-colors duration-300" />
         </div>
 
         <div className="space-y-3">
           {/* Title and Year */}
           <div className="flex items-baseline justify-between">
-            <h3 className="text-lg md:text-xl font-medium tracking-tight group-hover:text-neutral-600 transition-colors duration-200">
+            <h3 className="text-lg md:text-xl font-medium tracking-tight group-hover:text-gray-600 transition-colors duration-200">
               {project.title}
             </h3>
             {project.year && (
-              <span className="text-sm text-neutral-500 font-mono">
+              <span className="text-sm text-gray-500 font-mono">
                 {project.year}
               </span>
             )}
           </div>
 
           {/* Description */}
-          <p className="text-sm md:text-base text-neutral-600 leading-relaxed line-clamp-2">
+          <p className="text-sm md:text-base text-gray-600 leading-relaxed line-clamp-2">
             {project.description}
           </p>
 
@@ -80,13 +80,13 @@ export default function ProjectCard({
               {project.tags.slice(0, 3).map((tag) => (
                 <span
                   key={tag}
-                  className="text-xs px-2 py-1 bg-neutral-100 text-neutral-600 rounded-full"
+                  className="text-xs px-2 py-1 bg-gray-100 text-gray-600 rounded-full"
                 >
                   {tag}
                 </span>
               ))}
               {project.tags.length > 3 && (
-                <span className="text-xs px-2 py-1 text-neutral-400">
+                <span className="text-xs px-2 py-1 text-gray-400">
                   +{project.tags.length - 3} more
                 </span>
               )}

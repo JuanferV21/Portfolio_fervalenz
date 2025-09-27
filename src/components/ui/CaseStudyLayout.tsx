@@ -63,7 +63,7 @@ export default function CaseStudyLayout({
             {title}
           </h1>
 
-          <p className="text-lg md:text-xl text-neutral-600 leading-relaxed mb-8 text-pretty">
+          <p className="text-lg md:text-xl text-gray-600 leading-relaxed mb-8 text-pretty">
             {description}
           </p>
 
@@ -71,28 +71,28 @@ export default function CaseStudyLayout({
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-sm">
             {year && (
               <div>
-                <dt className="font-medium text-neutral-900 mb-1">Year</dt>
-                <dd className="text-neutral-600">{year}</dd>
+                <dt className="font-medium text-gray-900 mb-1">Year</dt>
+                <dd className="text-gray-600">{year}</dd>
               </div>
             )}
             {client && (
               <div>
-                <dt className="font-medium text-neutral-900 mb-1">Client</dt>
-                <dd className="text-neutral-600">{client}</dd>
+                <dt className="font-medium text-gray-900 mb-1">Client</dt>
+                <dd className="text-gray-600">{client}</dd>
               </div>
             )}
             {role && (
               <div>
-                <dt className="font-medium text-neutral-900 mb-1">Role</dt>
-                <dd className="text-neutral-600">{role}</dd>
+                <dt className="font-medium text-gray-900 mb-1">Role</dt>
+                <dd className="text-gray-600">{role}</dd>
               </div>
             )}
             {tags && tags.length > 0 && (
               <div>
-                <dt className="font-medium text-neutral-900 mb-1">Tags</dt>
+                <dt className="font-medium text-gray-900 mb-1">Tags</dt>
                 <dd className="flex flex-wrap gap-1">
                   {tags.map((tag, index) => (
-                    <span key={tag} className="text-neutral-600">
+                    <span key={tag} className="text-gray-600">
                       {tag}
                       {index < tags.length - 1 && ','}
                     </span>
@@ -125,7 +125,7 @@ export default function CaseStudyLayout({
               item.aspectRatio
                 ? aspectRatioClasses[item.aspectRatio]
                 : 'aspect-video'
-            } overflow-hidden bg-neutral-100`}
+            } overflow-hidden bg-gray-100`}
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{
@@ -169,17 +169,17 @@ export default function CaseStudyLayout({
       {/* Next Project */}
       {nextProject && (
         <motion.div
-          className="mt-24 md:mt-32 pt-16 md:pt-24 border-t border-neutral-200"
+          className="mt-24 md:mt-32 pt-16 md:pt-24 border-t border-gray-200"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.5, ease: 'easeOut' }}
         >
-          <div className="text-sm text-neutral-600 mb-4">Next Project</div>
+          <div className="text-sm text-gray-600 mb-4">Next Project</div>
           <Link
             href={nextProject.href}
             className="group flex items-center space-x-6 hover:opacity-80 transition-opacity duration-200"
           >
-            <div className="relative w-24 h-24 bg-neutral-100 overflow-hidden">
+            <div className="relative w-24 h-24 bg-gray-100 overflow-hidden">
               <Image
                 src={nextProject.image}
                 alt={nextProject.title}
@@ -189,10 +189,10 @@ export default function CaseStudyLayout({
               />
             </div>
             <div>
-              <h3 className="text-xl font-medium tracking-tight group-hover:text-neutral-600 transition-colors duration-200">
+              <h3 className="text-xl font-medium tracking-tight group-hover:text-gray-600 transition-colors duration-200">
                 {nextProject.title}
               </h3>
-              <span className="text-sm text-neutral-500 link-underline">
+              <span className="text-sm text-gray-500 link-underline">
                 View Project →
               </span>
             </div>

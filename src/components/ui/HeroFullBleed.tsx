@@ -85,7 +85,7 @@ export default function HeroFullBleed({
 
       {/* Overlay */}
       {overlay && (
-        <div className="absolute inset-0 bg-neutral-900/20 z-10" />
+        <div className="absolute inset-0 bg-gray-900/20 z-10" />
       )}
 
       {/* Content */}
@@ -105,7 +105,7 @@ export default function HeroFullBleed({
 
           {subtitle && (
             <motion.p
-              className="text-lg md:text-xl text-neutral-200 mb-8 max-w-2xl mx-auto text-balance"
+              className="text-lg md:text-xl text-gray-200 mb-8 max-w-2xl mx-auto text-balance"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}

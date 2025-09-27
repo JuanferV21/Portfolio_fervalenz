@@ -114,15 +114,15 @@
   }
 
   h1 {
-    @apply font-extralight text-6xl md:text-7xl lg:text-8xl;
+    @apply font-extralight text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl;
   }
 
   h2 {
-    @apply font-light text-3xl md:text-4xl lg:text-5xl;
+    @apply font-light text-2xl sm:text-3xl md:text-4xl lg:text-5xl;
   }
 
   h3 {
-    @apply font-light text-xl md:text-2xl;
+    @apply font-light text-lg sm:text-xl md:text-2xl;
   }
 
   p {
@@ -136,11 +136,11 @@
   }
 
   .hero-text {
-    @apply text-6xl md:text-7xl lg:text-8xl font-medium tracking-tight leading-none;
+    @apply text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-medium tracking-tight leading-none;
   }
 
   .section-padding {
-    @apply px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16;
+    @apply px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20;
   }
 
   .container-max {
@@ -152,8 +152,8 @@
   }
 
   .btn-primary {
-    @apply inline-flex items-center justify-center px-6 py-3
-           bg-black text-white font-medium rounded-none
+    @apply inline-flex items-center justify-center px-4 sm:px-6 py-3 sm:py-4
+           bg-black text-white font-medium rounded-none text-sm sm:text-base
            transition-all duration-200 ease-out
            hover:bg-gray-800 hover:scale-[1.02]
            active:scale-[0.98]
@@ -162,8 +162,8 @@
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center px-6 py-3
-           border border-black text-black font-medium rounded-none
+    @apply inline-flex items-center justify-center px-4 sm:px-6 py-3 sm:py-4
+           border border-black text-black font-medium rounded-none text-sm sm:text-base
            transition-all duration-200 ease-out
            hover:bg-black hover:text-white hover:scale-[1.02]
            active:scale-[0.98]
@@ -172,8 +172,8 @@
   }
 
   .btn-tech {
-    @apply inline-flex items-center justify-center px-4 py-2
-           bg-gray-100 text-black text-sm font-medium rounded-none
+    @apply inline-flex items-center justify-center px-3 sm:px-4 py-2 sm:py-2.5
+           bg-gray-100 text-black text-xs sm:text-sm font-medium rounded-none
            transition-all duration-200 ease-out
            hover:bg-gray-200 hover:scale-[1.05]
            active:scale-[0.95];
@@ -213,6 +213,102 @@
   .transform-preserve-3d {
     transform-style: preserve-3d;
   }
+
+  /* Mobile-specific utilities */
+  .touch-pan-y {
+    touch-action: pan-y;
+  }
+
+  .touch-manipulation {
+    touch-action: manipulation;
+  }
+
+  /* Safe area padding for mobile devices */
+  .safe-area-inset-top {
+    padding-top: constant(safe-area-inset-top);
+    padding-top: env(safe-area-inset-top);
+  }
+
+  .safe-area-inset-bottom {
+    padding-bottom: constant(safe-area-inset-bottom);
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  /* Improved scrolling on mobile */
+  .scroll-smooth-mobile {
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* Mobile-specific improvements */
+@media (max-width: 640px) {
+  /* Improve touch targets */
+  .btn-primary,
+  .btn-secondary,
+  .btn-tech {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Better spacing on small screens */
+  .section-padding {
+    @apply px-4;
+  }
+
+  /* Prevent horizontal scroll */
+  body {
+    overflow-x: hidden;
+  }
+
+  /* Optimize images for mobile */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Better text readability */
+  p, li {
+    line-height: 1.6;
+  }
+}
+
+/* Tablet improvements */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .section-padding {
+    @apply px-6;
+  }
+}
+
+/* Brutalist focus states for accessibility */
+.focus-ring {
+  @apply focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 focus:ring-offset-white;
+}
+
+.focus-ring-inset {
+  @apply focus:outline-none focus:ring-2 focus:ring-inset focus:ring-black;
+}
+
+/* Button focus states */
+.btn-primary,
+.btn-secondary {
+  @apply focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 focus:ring-offset-white;
+}
+
+/* Link focus states */
+a:not(.btn-primary):not(.btn-secondary) {
+  @apply focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 focus:ring-offset-white rounded-sm;
+}
+
+/* Input focus states */
+input[type="text"],
+input[type="email"],
+textarea {
+  @apply focus:outline-none focus:ring-2 focus:ring-black focus:border-black;
+}
+
+/* Form elements with brutalist styling */
+.form-field {
+  @apply focus:outline-none focus:ring-2 focus:ring-black focus:border-black;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -227,5 +323,11 @@
 
   .card-hover {
     @apply hover:scale-100;
+  }
+
+  /* Disable scroll-triggered animations for accessibility */
+  [data-scroll-animation] {
+    opacity: 1 !important;
+    transform: none !important;
   }
 }
