@@ -1,193 +1,41 @@
 import { Project, Skill, DeveloperProfile, LearningEntry } from '@/types';
 
-// Sample developer projects
+// Real developer projects
 export const developerProjects: Project[] = [
   {
     id: '1',
-    title: 'E-commerce Platform',
-    slug: 'ecommerce-platform',
-    description: 'Full-stack e-commerce solution with React, Node.js, and PostgreSQL',
-    longDescription: 'A complete e-commerce platform built with modern technologies. Features include user authentication, product catalog, shopping cart, payment integration with Stripe, admin dashboard, and order management system.',
+    title: 'Café Aurora',
+    slug: 'cafe-aurora',
+    description: 'Landing page de café de especialidad con e-commerce, dark mode y animaciones avanzadas',
+    longDescription: 'Café Aurora es una landing page moderna para una cafetería de especialidad. El proyecto incluye un diseño elegante con sistema de tema claro/oscuro, animaciones fluidas con Framer Motion, sección de productos con filtros, testimonios en carrusel, información de ubicaciones, y formulario de newsletter. Desarrollada con Next.js 14, TypeScript, Tailwind CSS y shadcn/ui.',
     year: 2024,
-    technologies: ['React', 'TypeScript', 'Node.js', 'PostgreSQL', 'Docker'],
+    technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'shadcn/ui'],
     category: 'web',
     status: 'completed',
     featured: true,
-    href: '/projects/ecommerce-platform',
-    githubUrl: 'https://github.com/yourusername/ecommerce-platform',
-    liveUrl: 'https://ecommerce-demo.vercel.app',
+    href: '/projects/cafe-aurora',
+    githubUrl: 'https://github.com/JuanferV21/CafeAurora2',
+    liveUrl: 'https://cafe-aurora2.vercel.app',
     coverImage: {
-      src: '/projects/ecommerce-cover.svg',
-      alt: 'E-commerce Platform Screenshot',
+      src: '/projects/cafe-aurora-cover.svg',
+      alt: 'Café Aurora Landing Page Screenshot',
       blurDataURL: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCIgZmlsbD0iI0YxRjVGOSIvPjwvc3ZnPg=='
     },
     features: [
-      'User authentication and authorization',
-      'Product catalog with search and filters',
-      'Shopping cart and checkout process',
-      'Payment integration with Stripe',
-      'Admin dashboard for inventory management',
-      'Order tracking and email notifications'
+      'Dark/Light mode con persistencia y animaciones suaves',
+      'Logo personalizado con efectos de glow animado',
+      'Scroll progress bar con spring physics',
+      'Product showcase con filtros por tipo de tueste',
+      'Cards con micro-animaciones y efectos hover avanzados',
+      'Carrusel de testimonios con navegación por teclado',
+      'Skeleton loaders con efecto shimmer',
+      'Formulario de newsletter con validación Zod',
+      'Diseño completamente responsive',
+      'Optimizado para performance (Lighthouse 90+)'
     ],
     metrics: {
-      users: 1200,
-      performance: '95% Lighthouse',
-      stars: 47
-    }
-  },
-  {
-    id: '2',
-    title: 'Task Management API',
-    slug: 'task-api',
-    description: 'RESTful API for task management with authentication and real-time updates',
-    longDescription: 'A robust RESTful API built with Express.js and MongoDB. Features JWT authentication, real-time updates with WebSocket, comprehensive testing, and detailed API documentation.',
-    year: 2024,
-    technologies: ['Node.js', 'Express', 'MongoDB', 'Jest', 'Swagger'],
-    category: 'api',
-    status: 'maintained',
-    featured: true,
-    href: '/projects/task-api',
-    githubUrl: 'https://github.com/yourusername/task-api',
-    liveUrl: 'https://api.tasks-app.com/docs',
-    coverImage: {
-      src: '/projects/api-cover.svg',
-      alt: 'API Documentation Screenshot',
-      blurDataURL: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCIgZmlsbD0iI0YxRjVGOSIvPjwvc3ZnPg=='
-    },
-    features: [
-      'JWT-based authentication',
-      'CRUD operations for tasks and projects',
-      'Real-time updates with WebSocket',
-      'Comprehensive API documentation',
-      'Unit and integration testing',
-      'Rate limiting and security headers'
-    ],
-    metrics: {
-      stars: 45,
-      performance: '99.9% uptime'
-    }
-  },
-  {
-    id: '3',
-    title: 'React Component Library',
-    slug: 'react-components',
-    description: 'Reusable React component library with TypeScript and Storybook',
-    longDescription: 'A modern React component library built with TypeScript, featuring customizable components, comprehensive documentation with Storybook, and automated testing.',
-    year: 2024,
-    technologies: ['React', 'TypeScript', 'Jest', 'Tailwind CSS'],
-    category: 'library',
-    status: 'in-progress',
-    featured: false,
-    href: '/projects/react-components',
-    githubUrl: 'https://github.com/yourusername/react-components',
-    npmUrl: 'https://www.npmjs.com/package/@yourusername/react-components',
-    coverImage: {
-      src: '/projects/components-cover.svg',
-      alt: 'Component Library Storybook',
-      blurDataURL: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCIgZmlsbD0iI0YxRjVGOSIvPjwvc3ZnPg=='
-    },
-    features: [
-      'TypeScript-first development',
-      'Customizable with CSS variables',
-      'Interactive Storybook documentation',
-      'Automated testing with Jest',
-      'Tree-shaking support',
-      'NPM package publishing'
-    ],
-    metrics: {
-      downloads: 2500,
-      stars: 23
-    }
-  },
-  {
-    id: '4',
-    title: 'Weather Dashboard',
-    slug: 'weather-dashboard',
-    description: 'Real-time weather dashboard with charts and location-based forecasts',
-    longDescription: 'An interactive weather dashboard that provides real-time weather data, forecasts, and visualizations. Built with Next.js and integrated with multiple weather APIs.',
-    year: 2023,
-    technologies: ['Next.js', 'Tailwind CSS'],
-    category: 'web',
-    status: 'completed',
-    featured: false,
-    href: '/projects/weather-dashboard',
-    githubUrl: 'https://github.com/yourusername/weather-dashboard',
-    liveUrl: 'https://weather-dashboard-demo.vercel.app',
-    coverImage: {
-      src: '/projects/weather-cover.svg',
-      alt: 'Weather Dashboard Interface',
-      blurDataURL: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCIgZmlsbD0iI0YxRjVGOSIvPjwvc3ZnPg=='
-    },
-    features: [
-      'Real-time weather data',
-      'Interactive charts and graphs',
-      'Location-based search',
-      '7-day weather forecast',
-      'Responsive design',
-      'Dark/light mode toggle'
-    ],
-    metrics: {
-      users: 850
-    }
-  },
-  {
-    id: '5',
-    title: 'DevOps Monitoring Tool',
-    slug: 'devops-monitoring',
-    description: 'Container monitoring and alerting system with Docker and Prometheus',
-    longDescription: 'A comprehensive monitoring solution for containerized applications using Docker, Prometheus, and Grafana. Includes custom metrics, alerting rules, and automated deployment.',
-    year: 2023,
-    technologies: ['Docker', 'Node.js', 'Python'],
-    category: 'tool',
-    status: 'maintained',
-    featured: true,
-    href: '/projects/devops-monitoring',
-    githubUrl: 'https://github.com/yourusername/devops-monitoring',
-    coverImage: {
-      src: '/projects/monitoring-cover.svg',
-      alt: 'Monitoring Dashboard',
-      blurDataURL: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCIgZmlsbD0iI0YxRjVGOSIvPjwvc3ZnPg=='
-    },
-    features: [
-      'Real-time container monitoring',
-      'Custom metric collection',
-      'Automated alerting system',
-      'Grafana dashboards',
-      'Docker Compose setup',
-      'Slack notifications'
-    ],
-    metrics: {
-      stars: 67
-    }
-  },
-  {
-    id: '6',
-    title: 'Mobile Expense Tracker',
-    slug: 'expense-tracker',
-    description: 'React Native app for personal expense tracking with data visualization',
-    longDescription: 'A cross-platform mobile application for tracking personal expenses. Features include expense categorization, budget management, and detailed analytics with charts.',
-    year: 2023,
-    technologies: ['React', 'JavaScript'],
-    category: 'mobile',
-    status: 'completed',
-    featured: false,
-    href: '/projects/expense-tracker',
-    githubUrl: 'https://github.com/yourusername/expense-tracker',
-    coverImage: {
-      src: '/projects/mobile-cover.svg',
-      alt: 'Mobile App Interface',
-      blurDataURL: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCIgZmlsbD0iI0YxRjVGOSIvPjwvc3ZnPg=='
-    },
-    features: [
-      'Expense categorization',
-      'Budget tracking and alerts',
-      'Data visualization with charts',
-      'Cloud data synchronization',
-      'Offline functionality',
-      'Export to CSV/PDF'
-    ],
-    metrics: {
-      users: 450
+      performance: '90+ Lighthouse',
+      stars: 0
     }
   }
 ];
