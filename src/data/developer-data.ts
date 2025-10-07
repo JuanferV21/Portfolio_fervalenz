@@ -51,7 +51,7 @@ export const developerProjects: Project[] = [
     featured: true,
     href: '/projects/analytics-dashboard',
     githubUrl: 'https://github.com/JuanferV21/analytics-dashboard',
-    liveUrl: 'https://github.com/JuanferV21/analytics-dashboard',
+    liveUrl: 'https://analytics-dashboard-ruddy-xi.vercel.app',
     coverImage: {
       src: '/projects/analytics-dashboard-cover.svg',
       alt: 'AnalyticsPro Dashboard Screenshot',
