@@ -37,6 +37,46 @@ export const developerProjects: Project[] = [
       performance: '90+ Lighthouse',
       stars: 0
     }
+  },
+  {
+    id: '2',
+    title: 'AnalyticsPro Dashboard',
+    slug: 'analytics-dashboard',
+    description: 'Dashboard de analítica SaaS moderno con gráficas interactivas, gestión de usuarios y reportes',
+    longDescription: 'AnalyticsPro es un dashboard de analítica completo tipo SaaS construido desde cero. Incluye 6 páginas funcionales con visualizaciones de datos interactivas, tablas con filtros, sistema de gestión de usuarios, generación de reportes, catálogo de productos con inventario, y configuraciones completas. Diseñado con un enfoque profesional y minimalista, optimizado para performance y experiencia de usuario.',
+    year: 2024,
+    technologies: ['React', 'Vite', 'Tailwind CSS', 'Recharts', 'Framer Motion', 'Lucide React'],
+    category: 'web',
+    status: 'completed',
+    featured: true,
+    href: '/projects/analytics-dashboard',
+    githubUrl: 'https://github.com/JuanferV21/analytics-dashboard',
+    liveUrl: 'https://github.com/JuanferV21/analytics-dashboard',
+    coverImage: {
+      src: '/projects/analytics-dashboard-cover.svg',
+      alt: 'AnalyticsPro Dashboard Screenshot',
+      blurDataURL: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCIgZmlsbD0iI2E4NTVmNyIvPjwvc3ZnPg=='
+    },
+    features: [
+      'Dashboard principal con métricas en tiempo real',
+      'Página de Analytics con gráficas avanzadas (área, dona, barras)',
+      'Gestión de usuarios con tabla interactiva y badges',
+      'Sistema de reportes con generación y descarga',
+      'Catálogo de productos con control de inventario',
+      'Settings completos con 5 tabs de configuración',
+      'Dark/Light mode funcional con persistencia',
+      'Sidebar colapsable con navegación fluida',
+      '20+ gráficas interactivas con Recharts',
+      'Animaciones con Framer Motion en todos los componentes',
+      'Componentes UI modulares y reutilizables',
+      'Sistema de datos simulados realistas',
+      'Diseño responsive (mobile, tablet, desktop)',
+      'Color scheme violeta/púrpura profesional'
+    ],
+    metrics: {
+      performance: 'Production Ready',
+      stars: 0
+    }
   }
 ];
 
